@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DOM RnD</title>
+    <style>
+
+        chat-widget {
+            display: flex;
+            flex-direction: column;
+            width: 400px;
+            height: 600px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            overflow: hidden;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+        }
+
+        chat-window {
+            display: block;
+            width: 400px;
+            height: 600px;
+            background: #f0f0f0;
+            border: 1px solid #ccc;
+        }
+
+        chat-window p {
+            margin: 0.5em;
+            padding: 0.5em;
+            border-radius: 8px;
+            max-width: 70%;
+        }
+
+        chat-window p.User {
+            background: #d1e7dd;
+            align-self: flex-start;
+            margin-left: auto;
+        }
+
+        chat-window p.Bot {
+            background: #f8d7da;
+            align-self: flex-end;
+            margin-right: auto;
+        }
+
+        #chatForm {
+            display: flex;
+            padding: 0.5em;
+            background: #fff;
+            border-top: 1px solid #ccc;
+
+            input[type="text"] {
+                flex: 1;
+                padding: 0.5em;
+                border: 1px solid #ccc;
+                border-radius: 4px;
+                font-size: 1em;
+            }
+        }
+
+    </style>
+
+    <script type="module">
+        import { getBotResponse } from './eliza.js';
+
+        const DEBUG = false;
+        const log = (msg) => { if (DEBUG) console.log(msg); };
+      
+
+        function showResponse(response) {
+            addToChatWindow(response, 'Bot');
+        }
+
+        function getResponse(message) {
+            return getBotResponse(message);
+        }
+
+        function processMessage(message) {
+            let response = getResponse(message);
+
+            showResponse(response);
+        }
+
+
+        function addToChatWindow(message, speaker) {
+            let chatWindow = document.getElementById('chatWindow');
+            chatWindow.innerHTML += `<p class="${speaker}">${speaker}: ${message}</p>`;
+        }
+
+
+        function send() {
+            let messageBox = document.getElementById('messageBox');
+            let message = messageBox.value;
+
+            let chatWindow = document.getElementById('chatWindow');
+            
+            messageBox.value = ''; // clear the field
+            messageBox.focus();
+
+            addToChatWindow(message,'User');
+
+            processMessage(message);
+        }
+
+
+        function init() {
+            log('Initializing chat interface');
+            document.getElementById('sendBtn').addEventListener('click', function () {
+                    send();
+                });
+        }
+        
+        window.addEventListener('DOMContentLoaded', init);
+    </script>
+</head>
+<body>
+
+    <chat-widget>
+        <chat-window id="chatWindow"></chat-window>
+           <form id="chatForm">
+                <input type="text" placeholder="Type a message" id="messageBox" autocomplete="off">
+                <button id="sendBtn" type="button">Send</button>
+            </form>
+    </chat-widget>
+ 
+
+</body>
+</html>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lab 6 - Component Approaches</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Chat Component</h1>
+    <p>Prototype + Three Approaches to Component-Based Thinking</p>
+  </header>
+  
+  <main>
+    <section class="approaches-container">
+      
+      <article class="card prototype">
+        <header>
+          <span class="tag">Prototype</span>
+          <h2>Pure HTML &amp; CSS</h2>
+        </header>
+        <p>A static mockup using only HTML and CSS to work out the interface design.</p>
+        <ul>
+          <li><span>✓</span> No dependencies</li>
+          <li><span>✓</span> Always accessible</li>
+          <li><span>✓</span> Simple to understand</li>
+          <li><span>✓</span> No interactivity</li>
+        </ul>
+        <footer>
+          <a href="chat-prototype-html-css/" target="_blank" class="view-demo">View Demo →</a>
+        </footer>
+      </article>
+
+      <article class="card approach-1">
+        <header>
+          <span class="tag">Approach 1</span>
+          <h2>DOM Manipulation</h2>
+        </header>
+        <p>Interactive chat using vanilla JavaScript and standard DOM methods.</p>
+        <ul>
+          <li><span>✓</span> Full interactivity</li>
+          <li><span>✓</span> Eliza-style bot</li>
+          <li><span>✓</span> Standard JavaScript</li>
+          <li><span>✓</span> No encapsulation</li>
+        </ul>
+        <footer>
+          <a href="chat-dom/" target="_blank" class="view-demo">View Demo →</a>
+        </footer>
+      </article>
+
+      <article class="card approach-2">
+        <header>
+          <span class="tag">Approach 2</span>
+          <h2>Progressive Enhancement</h2>
+        </header>
+        <p>Custom element that enhances existing HTML markup with JavaScript.</p>
+        <ul>
+          <li><span>✓</span> Graceful degradation</li>
+          <li><span>✓</span> Semantic base HTML</li>
+          <li><span>✓</span> Web Components API</li>
+          <li><span>✓</span> Global styles</li>
+        </ul>
+        <footer>
+          <a href="chat-webcomponent-pe/" target="_blank" class="view-demo">View Demo →</a>
+        </footer>
+      </article>
+      
+      <article class="card approach-3">
+        <header>
+          <span class="tag">Approach 3</span>
+          <h2>Graceful Degradation</h2>
+        </header>
+        <p>Fully encapsulated custom element with Shadow DOM and internal styles.</p>
+        <ul>
+          <li><span>✓</span> Complete encapsulation</li>
+          <li><span>✓</span> Shadow DOM</li>
+          <li><span>✓</span> Self-contained</li>
+          <li><span>✓</span> Highly reusable</li>
+        </ul>
+        <footer>
+          <a href="chat-webcomponent-gd/" target="_blank" class="view-demo">View Demo →</a>
+        </footer>
+      </article>
+    
+    </section>
+  </main>
+  
+  <footer>
+    <p>COMP 305 Fall 2025 - Toby Bolcer</p>
+  </footer>
+</body>
+</html>

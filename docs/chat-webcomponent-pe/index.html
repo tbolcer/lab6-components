@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chat Web Component PE</title>
+  <link rel="stylesheet" href="style.css">
+  <script type="module" src="chat-component.js"></script>
+</head>
+
+<body>
+  <chat-header>
+    <p id="p1">Chat Assistant</p>
+    <p id="p2">Approach 2: Web Component Progressive Enhancement</p>
+  </chat-header>
+
+  <simple-chat>
+    <div class="messages">
+      <div class="message bot">
+        <div class="bubble">Hello! How can I help you?</div>
+      </div>
+    </div>
+
+    <form class="input-area">
+      <input type="text" placeholder="Type a message..." autofocus>
+      <button type="submit">Send</button>
+    </form>
+  </simple-chat>
+
+</body>
+
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>DOM Class Example</title>
+    </head>
+    <body>
+        
+        <output id="output"></output>
+        
+        <hr>
+
+        <button id="btn1">Click Me</button>
+
+        <script type="module">
+
+            function handleClick() {
+                let paragraph;
+
+                paragraph = document.createElement('p1');
+                // paragraph.setAttribute('title', 'I\'m Changed!');
+                paragraph.title = "I'm Changed!";
+            }
+
+            function init() {
+                document.getElementById('btn1').addEventListener('click', handleClick);
+            }
+
+            window.addEventListener('DOMContentLoaded', function () {
+                init();
+            });
+        </script>
+    </body>

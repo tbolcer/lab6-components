@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat Prototype HTML/CSS</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main id="chatWindow">
+        <section id="chatHeader">
+            <p id="title1">Chat Assistant</p>
+            <p id="subtitle1">Prototype: Pure HTML/CSS (Static)</p>
+        </section>
+
+        <section id="messages">
+            <p class="message bot"><span class="avatar" aria-hidden="true">🤖</span><span class="bubble" data-ts="10:00">Hello! I'm here to chat with you. How can I help you today?</span></p>
+            <p class="message user"><span class="bubble" data-ts="10:01">Hi There! What can you do?</span><span class="avatar" aria-hidden="true">🙂</span></p>
+            <p class="message bot"><span class="avatar" aria-hidden="true">🤖</span><span class="bubble" data-ts="10:02">I can chat with you about various topics. Try asking me a question or just say hello!</span></p>
+            <p class="message user"><span class="bubble" data-ts="10:03">How does this work?</span><span class="avatar" aria-hidden="true">🙂</span></p>
+            <p class="message bot"><span class="avatar" aria-hidden="true">🤖</span><span class="bubble" data-ts="10:04">That's a great question! In this version you can't respond to me since this conversation is completely fabricated.</span></p>
+        </section>
+
+        <form>
+            <form-field id="inputArea">
+                <textarea placeholder="Type a message..." rows="1" id="messageBox"></textarea>
+                <button id="sendBtn" type="button">Send</button>
+            </form-field>
+        </form>
+
+        <section id="errorMessage">
+            <p id="infoMessage">&#x2139; This is a static HTML/CSS demonstration. The input is disabled. See other approaches for interactive versions.</p>
+        </section>
+    </main>
+</body>
+</html>

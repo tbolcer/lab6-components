@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat DOM Manipulation</title>
+    <link rel="stylesheet" href="style.css">
+    <script type= "module" src= "script.js"></script>
+</head>
+
+<body>
+    <chat-window id="chatWindow">
+        <chat-header>
+            <p id="p1">Chat Assistant</p>
+            <p id="p2">Approach 1: DOM Manipulation</p>
+        </chat-header>
+
+        <chat-messages id="messages">
+
+        </chat-messages>
+
+        <input-area>
+            <textarea placeholder="Type a message..." rows="2" id="messageBox" autofocus></textarea>
+            <button id="sendBtn" type="button">Send</button>
+        </input-area>
+    </chat-window>
+</body>
+
+</html>
